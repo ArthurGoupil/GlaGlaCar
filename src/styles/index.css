@@ -9,6 +9,8 @@ textarea,
 button {
   font-size: 62.5%;
   font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  color: #303e2e;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
