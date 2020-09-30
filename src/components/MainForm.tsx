@@ -2,10 +2,26 @@ import React, { useState } from 'react';
 
 import styled from 'styled-components';
 
-import Input from './Input';
+import Input from './Utils/Input';
+import DatePickerInput from './Utils/DatePickerInput';
+import NumericInput from './Utils/NumericInput';
+import Button from './Utils/Button';
 
 const MainForm: React.FC = () => {
   const [departure, setDeparture] = useState<string>('');
+  const [arrival, setArrival] = useState<string>('');
+  const [date, setDate] = useState<Date>();
+  const [numberOfPassenger, setNumberOfPassenger] = useState<number>(1);
+
+  console.log(date);
+
+  const onNumericInputChange = (numericChangeType: string): void => {
+    if (numericChangeType === 'INCREMENT' && numberOfPassenger < 9) {
+      setNumberOfPassenger(numberOfPassenger + 1);
+    } else if (numericChangeType === 'DECREMENT' && numberOfPassenger > 1) {
+      setNumberOfPassenger(numberOfPassenger - 1);
+    }
+  };
 
   return (
     <Form className='d-flex justify-center align-center'>
@@ -21,12 +37,33 @@ const MainForm: React.FC = () => {
       />
       <Input
         name='arrival'
-        value={departure}
+        value={arrival}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setDeparture(e.target.value)
+          setArrival(e.target.value)
         }
         placeholder='Going to...'
-        icon='keyboard-tab'
+        icon='filter-hdr'
+        hasMarginRight
+      />
+      <DatePickerInput
+        date={date}
+        onChange={(date) => setDate(date)}
+        placeholder='When?'
+        hasMarginRight
+      />
+      <NumericInput
+        value={numberOfPassenger}
+        onChange={(numericChangeType) =>
+          onNumericInputChange(numericChangeType)
+        }
+        hasMarginRight
+      />
+      <Button
+        label='Slide!'
+        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+          e.preventDefault();
+          console.log('good');
+        }}
       />
     </Form>
   );

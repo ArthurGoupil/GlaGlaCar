@@ -1,30 +1,35 @@
 import React from 'react';
 
-import { headerHeight } from '../styles/StylingConstants';
+import { headerWidth, headerHeight } from '../styles/StylingConstants';
 
 import styled from 'styled-components';
 
 const Header: React.FC = () => {
   return (
-    <StyledHeader className='d-flex justify-center align-center'>
-      <Logo src='/glaglacar-logo.png' alt='Logo GlaGlaCar' />
-    </StyledHeader>
+    <HeaderContainer className='d-flex justify-center align-center'>
+      <StyledHeader className='d-flex space-between align-center'>
+        <Logo src='/glaglacar-logo.png' alt='Logo GlaGlaCar' />
+        <h1>The one and only service of sledpooling</h1>
+      </StyledHeader>
+    </HeaderContainer>
   );
 };
 
 export default Header;
 
-const StyledHeader = styled.header.attrs((props: { className: string }) => ({
-  className: props.className,
-}))`
+const HeaderContainer = styled.div`
+  width: 100%;
   height: ${headerHeight};
   background-color: white;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 0 40px;
 `;
 
-const Logo = styled.img.attrs((props: { src: string; alt: string }) => ({
-  src: props.src,
-  alt: props.alt,
-}))`
-  height: 50px;
+const StyledHeader = styled.header`
+  width: 100%;
+  max-width: ${headerWidth};
+`;
+
+const Logo = styled.img`
+  height: 40px;
 `;

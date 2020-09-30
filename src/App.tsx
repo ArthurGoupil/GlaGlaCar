@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles/reset.css';
 import './styles/index.css';
-import { headerHeight } from './styles/StylingConstants';
+import { mainContainerWidth, headerHeight } from './styles/StylingConstants';
 
 import styled from 'styled-components';
 
@@ -11,7 +11,7 @@ import MainForm from './components/MainForm';
 
 const App: React.FC = () => {
   return (
-    <Root>
+    <Root className='d-flex flex-column align-center'>
       <Header />
       <Main>
         <MainForm />
@@ -32,5 +32,6 @@ const Root = styled.div`
 
 const Main = styled.main`
   width: 100%;
+  max-width: ${mainContainerWidth};
   height: calc(100vh - ${headerHeight});
 `;
