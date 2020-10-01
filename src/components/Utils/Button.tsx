@@ -9,13 +9,24 @@ import {
   miniRadius,
   miniShadow,
 } from '../../styles/StylingConstants';
-import { ButtonProps } from '../../types/UtilsTypes';
+import { IButtonProps } from '../../types/UtilsTypes';
 
-const Button = ({ label, onClick }: ButtonProps): JSX.Element => {
-  return <StyledButton onClick={onClick}>{label}</StyledButton>;
+const Button = ({
+  label,
+  onClick,
+  type,
+  disabled,
+}: IButtonProps): JSX.Element => {
+  return (
+    <StyledButton onClick={onClick} disabled={disabled}>
+      {label}
+    </StyledButton>
+  );
 };
 
-const StyledButton = styled.button`
+const StyledButton = styled.button.attrs((props: { disabled: boolean }) => ({
+  disabled: props.disabled,
+}))`
   background-color: ${mainLightColor};
   height: ${inputHeight};
   padding: 0 15px;
@@ -23,10 +34,10 @@ const StyledButton = styled.button`
   border: none;
   box-shadow: ${miniShadow};
   outline-color: ${mainLightColor};
-  color: white;
+  color: ${(props) => (props.disabled ? 'rgba(255, 255, 255, 0.5)' : 'white')};
   font-weight: bold;
-  cursor: pointer;
   outline: ${mainColor};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 `;
 
 export default Button;

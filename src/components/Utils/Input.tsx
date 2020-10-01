@@ -10,16 +10,17 @@ import {
   miniShadow,
   inputHeight,
 } from '../../styles/StylingConstants';
-import { InputProps } from '../../types/UtilsTypes';
+import { IInputProps } from '../../types/UtilsTypes';
 
 const Input = ({
   name,
   value,
+  type,
   onChange,
   placeholder,
   icon,
   hasMarginRight,
-}: InputProps): JSX.Element => {
+}: IInputProps): JSX.Element => {
   const getIcon = (icon: string): JSX.Element => {
     switch (icon) {
       case 'radio-button-unchecked':
@@ -38,6 +39,7 @@ const Input = ({
       <StyledInput
         name={name}
         value={value}
+        type={type}
         onChange={onChange}
         placeholder={placeholder}
       />

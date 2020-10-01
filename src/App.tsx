@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './styles/reset.css';
 import './styles/index.css';
@@ -7,16 +8,26 @@ import { mainContainerWidth, headerHeight } from './styles/StylingConstants';
 import styled from 'styled-components';
 
 import Header from './components/Header';
-import MainForm from './components/MainForm';
+import Home from './pages/Home';
+import SledPoolsSearch from './pages/SledPoolsSearch';
 
 const App: React.FC = () => {
   return (
-    <Root className='d-flex flex-column align-center'>
-      <Header />
-      <Main>
-        <MainForm />
-      </Main>
-    </Root>
+    <Router>
+      <Root className='d-flex flex-column align-center'>
+        <Header />
+        <Main>
+          <Switch>
+            <Route path='/sledpoolssearch/:departure/:arrival/:date/:numberOfPassenger'>
+              <SledPoolsSearch />
+            </Route>
+            <Route path='/'>
+              <Home />
+            </Route>
+          </Switch>
+        </Main>
+      </Root>
+    </Router>
   );
 };
 

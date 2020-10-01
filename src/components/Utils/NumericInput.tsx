@@ -11,13 +11,13 @@ import {
   miniShadow,
   inputHeight,
 } from '../../styles/StylingConstants';
-import { NumericInputProps } from '../../types/UtilsTypes';
+import { INumericInputProps } from '../../types/UtilsTypes';
 
 const NumericInput = ({
   value,
   onChange,
   hasMarginRight,
-}: NumericInputProps): JSX.Element => {
+}: INumericInputProps): JSX.Element => {
   return (
     <NumericInputAndControllersContainer
       className='d-flex'

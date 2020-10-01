@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { headerWidth, headerHeight } from '../styles/StylingConstants';
 
@@ -8,7 +9,9 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer className='d-flex justify-center align-center'>
       <StyledHeader className='d-flex space-between align-center'>
-        <Logo src='/glaglacar-logo.png' alt='Logo GlaGlaCar' />
+        <Link to='/'>
+          <Logo src='/glaglacar-logo.png' alt='Logo GlaGlaCar' />
+        </Link>
         <h1>The one and only service of sledpooling</h1>
       </StyledHeader>
     </HeaderContainer>
