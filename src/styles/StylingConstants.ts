@@ -10,7 +10,11 @@ export const inputHeight = '60px';
 
 // SPACES
 export const smallSpace = '20px';
+export const normalSpace = '40px';
 
 // OTHERS
 export const miniRadius = '5px';
+export const radius = '10px';
 export const miniShadow = '2px 2px 5px rgba(0, 0, 0, 0.2)';
+export const shadow = '2px 2px 10px rgba(0, 0, 0, 0.1)';
+export const mainLightColorShadow = `2px 2px 10px ${mainLightColor}`;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './styles/reset.css';
 import './styles/index.css';
-import { mainContainerWidth, headerHeight } from './styles/StylingConstants';
+import { mainContainerWidth } from './styles/StylingConstants';
 
 import styled from 'styled-components';
 
@@ -37,12 +37,11 @@ const Root = styled.div`
   background-image: url('/glaglacar-background.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
 `;
 
 const Main = styled.main`
   width: 100%;
   max-width: ${mainContainerWidth};
-  height: calc(100vh - ${headerHeight});
 `;

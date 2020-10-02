@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { MdInfo } from 'react-icons/md';
 
+import { headerHeight } from '../styles/StylingConstants';
 import { getSimplifiedDate } from '../helpers/globalHelpers';
 import Input from '../components/Utils/Input';
 import DatePickerInput from '../components/Utils/DatePickerInput';
@@ -38,7 +39,7 @@ const Home = (): JSX.Element => {
 
   return (
     <FormContainer className='d-flex flex-column justify-center align-center'>
-      <form className='d-flex'>
+      <form className='d-flex' autoComplete='off'>
         <Input
           name='departure'
           value={departure}
@@ -79,7 +80,7 @@ const Home = (): JSX.Element => {
           onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             e.preventDefault();
             history.push(
-              `/sledpoolssearch/${departure}/${arrival}/${getSimplifiedDate(
+              `/sledpoolssearch/${departure.toLowerCase()}/${arrival.toLowerCase()}/${getSimplifiedDate(
                 date,
                 '-'
               )}/${numberOfPassenger}`
@@ -95,8 +96,7 @@ const Home = (): JSX.Element => {
         <MdInfo />
         <HintText>
           There's not much available sledpools at the moment... Why don't you
-          try to go from Paris to Lapland on the{' '}
-          {getSimplifiedDate(new Date(), '/')}?
+          try to go from Paris to Lapland tomorrow?
         </HintText>
       </HintContainer>
     </FormContainer>
@@ -107,7 +107,7 @@ export default Home;
 
 const FormContainer = styled.section`
   width: 100%;
-  height: 100%;
+  min-height: calc(100vh - ${headerHeight});
 `;
 
 const HintContainer = styled.div`

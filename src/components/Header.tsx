@@ -26,6 +26,8 @@ const HeaderContainer = styled.div`
   background-color: white;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   padding: 0 40px;
+  position: sticky;
+  top: 0;
 `;
 
 const StyledHeader = styled.header`

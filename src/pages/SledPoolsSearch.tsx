@@ -3,7 +3,11 @@ import { useParams } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-const SledPoolsSearch: React.FC = (props: any) => {
+import { normalSpace } from '../styles/StylingConstants';
+import SearchRecap from '../components/SledPoolsSearch/SearchRecap';
+import SearchResults from '../components/SledPoolsSearch/SearchResults';
+
+const SledPoolsSearch: React.FC = () => {
   const {
     departure,
     arrival,
@@ -13,9 +17,26 @@ const SledPoolsSearch: React.FC = (props: any) => {
 
   const numberOfPassengerToNum = Number(numberOfPassenger);
 
-  return <div></div>;
+  return (
+    <SearchContainer className='d-flex flex-column align-center'>
+      <SearchRecap
+        departure={departure}
+        arrival={arrival}
+        date={new Date(date)}
+        numberOfPassenger={numberOfPassengerToNum}
+      />
+      <SearchResults
+        departure={departure}
+        arrival={arrival}
+        date={new Date(date)}
+        numberOfPassenger={numberOfPassengerToNum}
+      />
+    </SearchContainer>
+  );
 };
 
-const SearchRecap = styled.div``;
+const SearchContainer = styled.section`
+  margin-top: ${normalSpace};
+`;
 
 export default SledPoolsSearch;
