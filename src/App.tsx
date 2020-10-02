@@ -37,7 +37,8 @@ const Root = styled.div`
   background-image: url('/glaglacar-background.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 100vw;
+  min-width: ${document.documentElement
+    .clientWidth}; /* getting 100vh - scrollbar width */
   min-height: 100vh;
 `;
 
