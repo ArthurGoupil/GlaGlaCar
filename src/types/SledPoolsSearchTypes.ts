@@ -4,3 +4,15 @@ export interface ISearchProps {
   date: Date;
   numberOfPassenger: number;
 }
+
+export interface IHoursAndPlacesProps {
+  departure: string;
+  arrival: string;
+  departureTime: string;
+  arrivalTime: string;
+}
+
+export interface IProfileDisplayProps {
+  src: string;
+  alt: string;
+}

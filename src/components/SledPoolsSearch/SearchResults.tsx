@@ -2,7 +2,7 @@ import React from 'react';
 
 import { data } from '../../data/data';
 import { ISearchProps } from '../../types/SledPoolsSearchTypes';
-import SearchBloc from './SearchBloc';
+import SearchBloc from './SearchBloc/';
 
 const SearchResults = ({
   departure,

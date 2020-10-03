@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { headerWidth, headerHeight } from '../styles/StylingConstants';
+import {
+  headerWidth,
+  headerHeight,
+  miniShadow,
+} from '../styles/StylingConstants';
 
 import styled from 'styled-components';
 
@@ -24,10 +28,11 @@ const HeaderContainer = styled.div`
   width: 100%;
   height: ${headerHeight};
   background-color: white;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: ${miniShadow};
   padding: 0 40px;
   position: sticky;
   top: 0;
+  z-index: 1;
 `;
 
 const StyledHeader = styled.header`

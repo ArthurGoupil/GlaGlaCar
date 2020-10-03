@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { MdInfo } from 'react-icons/md';
 
+import { ISearchProps } from '../types/SledPoolsSearchTypes';
 import { headerHeight } from '../styles/StylingConstants';
 import { getSimplifiedDate } from '../helpers/globalHelpers';
 import Input from '../components/Utils/Input';
@@ -27,19 +28,19 @@ const Home = (): JSX.Element => {
     }
   };
 
-  const isReadyToSearch = (
-    departure: string,
-    arrival: string,
-    date: Date,
-    numberOfPassenger: number
-  ): boolean => {
+  const isReadyToSearch = ({
+    departure,
+    arrival,
+    date,
+    numberOfPassenger,
+  }: ISearchProps): boolean => {
     if (departure && arrival && date && numberOfPassenger) return true;
     else return false;
   };
 
   return (
     <FormContainer className='d-flex flex-column justify-center align-center'>
-      <form className='d-flex' autoComplete='off'>
+      <Form className='d-flex' autoComplete='off'>
         <Input
           name='departure'
           value={departure}
@@ -62,19 +63,21 @@ const Home = (): JSX.Element => {
           icon='filter-hdr'
           hasMarginRight
         />
-        <DatePickerInput
-          date={date}
-          onChange={(date) => setDate(date)}
-          placeholder='When?'
-          hasMarginRight
-        />
-        <NumericInput
-          value={numberOfPassenger}
-          onChange={(numericChangeType) =>
-            onNumericInputChange(numericChangeType)
-          }
-          hasMarginRight
-        />
+        <div className='d-flex'>
+          <DatePickerInput
+            date={date}
+            onChange={(date) => setDate(date)}
+            placeholder='When?'
+            hasMarginRight
+          />
+          <NumericInput
+            value={numberOfPassenger}
+            onChange={(numericChangeType) =>
+              onNumericInputChange(numericChangeType)
+            }
+            hasMarginRight
+          />
+        </div>
         <Button
           label='Slide!'
           onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -88,10 +91,10 @@ const Home = (): JSX.Element => {
           }}
           type='submit'
           disabled={
-            !isReadyToSearch(departure, arrival, date, numberOfPassenger)
+            !isReadyToSearch({ departure, arrival, date, numberOfPassenger })
           }
         />
-      </form>
+      </Form>
       <HintContainer className='d-flex align-center'>
         <MdInfo />
         <HintText>
@@ -103,12 +106,12 @@ const Home = (): JSX.Element => {
   );
 };
 
-export default Home;
-
 const FormContainer = styled.section`
   width: 100%;
   min-height: calc(100vh - ${headerHeight});
 `;
+
+const Form = styled.form``;
 
 const HintContainer = styled.div`
   margin-top: 10px;
@@ -118,3 +121,5 @@ const HintText = styled.p`
   font-size: 14px;
   margin-left: 10px;
 `;
+
+export default Home;
