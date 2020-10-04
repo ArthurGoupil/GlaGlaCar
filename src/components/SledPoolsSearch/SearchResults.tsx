@@ -4,7 +4,7 @@ import { data } from '../../data/data';
 import { getSimplifiedDate } from '../../helpers/globalHelpers';
 import { ISearchProps, ISledpoolProps } from '../../types/SledpoolsSearchTypes';
 import NoResultBloc from './NoResultBloc';
-import SearchBloc from './SearchBloc';
+import SledpoolBloc from './SledpoolBloc';
 
 const SearchResults = ({
   departure,
@@ -28,7 +28,7 @@ const SearchResults = ({
     <>
       {matchingResults.length > 0 ? (
         matchingResults.map((sledPool, index) => {
-          return <SearchBloc key={sledPool.id} {...sledPool} />;
+          return <SledpoolBloc key={sledPool.id} {...sledPool} />;
         })
       ) : (
         <NoResultBloc numberOfPassenger={numberOfPassenger} />
