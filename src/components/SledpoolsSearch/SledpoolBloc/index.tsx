@@ -10,7 +10,7 @@ import {
   mainLightColorShadow,
   tabletBreakPoint,
 } from '../../../styles/StylingConstants';
-import { ISledpoolProps } from '../../../types/SledpoolsSearchTypes';
+import { ISledpoolBlocProps } from '../../../types/SledpoolsSearchTypes';
 import SledDisplay from './SledDisplay';
 import SledpoolBlocHoursAndPlacesDisplay from './SledpoolBlocHoursAndPlacesDisplay';
 import ProfileDisplay from './ProfileDisplay';
@@ -26,9 +26,13 @@ const SledpoolBloc = ({
   availableSeats,
   dogs,
   user,
-}: ISledpoolProps): JSX.Element => {
+  hasNoMarginBottom,
+}: ISledpoolBlocProps): JSX.Element => {
   return (
-    <SledpoolBlocContainer className='d-flex flex-column space-between'>
+    <SledpoolBlocContainer
+      className='d-flex flex-column space-between'
+      hasNoMarginBottom={hasNoMarginBottom}
+    >
       <TopPartContainer className='d-flex space-between'>
         <SledpoolBlocHoursAndPlacesDisplay
           departure={departure}
@@ -54,12 +58,16 @@ const SledpoolBloc = ({
   );
 };
 
-const SledpoolBlocContainer = styled.div`
+const SledpoolBlocContainer = styled.div.attrs(
+  (props: { hasNoMarginBottom: boolean }) => ({
+    hasNoMarginBottom: props.hasNoMarginBottom,
+  })
+)`
   width: 100%;
   padding: ${smallSpace};
   background-color: white;
   border-radius: ${radius};
-  margin-bottom: ${smallSpace};
+  margin-bottom: ${(props) => (props.hasNoMarginBottom ? 0 : smallSpace)};
   box-shadow: ${shadow};
   position: relative;
   transition: box-shadow 0.2s ease;

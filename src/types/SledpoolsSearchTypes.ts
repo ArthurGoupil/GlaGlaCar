@@ -29,7 +29,7 @@ export interface ISledpoolUser {
   picture: string;
 }
 
-export interface ISledpoolProps {
+export interface ISledpoolData {
   id: string;
   departure: string;
   departureHour: string;
@@ -41,4 +41,8 @@ export interface ISledpoolProps {
   availableSeats: number;
   dogs: number;
   user: ISledpoolUser;
+}
+
+export interface ISledpoolBlocProps extends ISledpoolData {
+  hasNoMarginBottom?: boolean;
 }

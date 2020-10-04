@@ -3,12 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import {
-  smallSpace,
-  normalSpace,
-  mobileBreakPoint,
-  tabletBreakPoint,
-} from '../styles/StylingConstants';
+import { tabletBreakPoint } from '../styles/StylingConstants';
 import SearchRecap from '../components/SledpoolsSearch/SearchRecap';
 import SearchResults from '../components/SledpoolsSearch/SearchResults';
 
@@ -19,8 +14,6 @@ const SledpoolsSearch: React.FC = () => {
     date,
     numberOfPassenger,
   }: { [key: string]: string } = useParams();
-
-  console.log(new Date(date.replace(/-/g, '/')));
 
   const numberOfPassengerToNum = Number(numberOfPassenger);
 

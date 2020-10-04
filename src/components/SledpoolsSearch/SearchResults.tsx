@@ -2,7 +2,7 @@ import React from 'react';
 
 import { data } from '../../data/data';
 import { getSimplifiedDate } from '../../helpers/globalHelpers';
-import { ISearchProps, ISledpoolProps } from '../../types/SledpoolsSearchTypes';
+import { ISearchProps, ISledpoolData } from '../../types/SledpoolsSearchTypes';
 import NoResultBloc from './NoResultBloc';
 import SledpoolBloc from './SledpoolBloc';
 
@@ -12,7 +12,7 @@ const SearchResults = ({
   date,
   numberOfPassenger,
 }: ISearchProps): JSX.Element => {
-  const matchingResults: ISledpoolProps[] = [];
+  const matchingResults: ISledpoolData[] = [];
 
   data.forEach((sledPool) => {
     if (
@@ -28,6 +28,10 @@ const SearchResults = ({
     <>
       {matchingResults.length > 0 ? (
         matchingResults.map((sledPool, index) => {
+          if (index === matchingResults.length - 1)
+            return (
+              <SledpoolBloc key={sledPool.id} {...sledPool} hasNoMarginBottom />
+            );
           return <SledpoolBloc key={sledPool.id} {...sledPool} />;
         })
       ) : (
