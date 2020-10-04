@@ -39,7 +39,7 @@ const SearchRecap = ({
 };
 
 const SearchRecapContainer = styled.div`
-  width: 70%;
+  width: 100%;
   background-color: ${mainColor};
   color: white;
   padding: ${smallSpace};

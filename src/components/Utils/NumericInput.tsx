@@ -10,6 +10,7 @@ import {
   smallSpace,
   miniShadow,
   inputHeight,
+  homeFormBreakPoint,
 } from '../../styles/StylingConstants';
 import { INumericInputProps } from '../../types/UtilsTypes';
 
@@ -28,6 +29,7 @@ const NumericInput = ({
         onClick={() => onChange('DECREMENT')}
         currentValue={value}
         changeType='DECREMENT'
+        hasNoMarginLeftOnMobile
       >
         -
       </NumericInputController>
@@ -42,6 +44,7 @@ const NumericInput = ({
         onClick={() => onChange('INCREMENT')}
         currentValue={value}
         changeType='INCREMENT'
+        hasNoMarginRightOnMobile
       >
         +
       </NumericInputController>
@@ -56,6 +59,9 @@ const NumericInputAndControllersContainer = styled.div.attrs(
 )`
   position: relative;
   margin-right: ${(props) => (props.hasMarginRight ? smallSpace : 0)};
+  @media (max-width: ${homeFormBreakPoint}) {
+    margin-right: 0;
+  }
 `;
 
 const NumericInputContainer = styled.div`
@@ -67,6 +73,10 @@ const IconContainer = styled.div`
   left: 7px;
   height: 100%;
   font-size: 22px;
+
+  @media (max-width: ${homeFormBreakPoint}) {
+    padding-bottom: 20px;
+  }
 `;
 
 const StyledNumericInput = styled.input`
@@ -78,12 +88,23 @@ const StyledNumericInput = styled.input`
   box-shadow: ${miniShadow};
   outline-color: ${mainLightColor};
   pointer-events: none;
+
+  @media (max-width: ${homeFormBreakPoint}) {
+    margin-bottom: ${smallSpace};
+  }
 `;
 
 const NumericInputController = styled.div.attrs(
-  (props: { currentValue: number; changeType: string }) => ({
+  (props: {
+    currentValue: number;
+    changeType: string;
+    hasNoMarginRightOnMobile: boolean;
+    hasNoMarginLeftOnMobile: boolean;
+  }) => ({
     currentValue: props.currentValue,
     changeType: props.changeType,
+    hasNoMarginRightOnMobile: props.hasNoMarginRightOnMobile,
+    hasNoMarginLeftOnMobile: props.hasNoMarginLeftOnMobile,
   })
 )`
   width: ${inputHeight};
@@ -101,6 +122,11 @@ const NumericInputController = styled.div.attrs(
     (props.currentValue === 9 && props.changeType === 'INCREMENT')
       ? 'not-allowed'
       : 'pointer'};
+
+  @media (max-width: ${homeFormBreakPoint}) {
+    margin-right: ${(props) => (props.hasNoMarginRightOnMobile ? 0 : '10px')};
+    margin-left: ${(props) => (props.hasNoMarginLeftOnMobile ? 0 : '10px')};
+  }
 `;
 
 export default NumericInput;

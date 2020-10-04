@@ -5,8 +5,10 @@ import styled from 'styled-components';
 import {
   radius,
   smallSpace,
+  normalSpace,
   shadow,
   mainLightColorShadow,
+  normalBreakPoint,
 } from '../../../styles/StylingConstants';
 import { ISledpoolProps } from '../../../types/SledpoolsSearchTypes';
 import SledDisplay from './SledDisplay';
@@ -26,35 +28,34 @@ const SearchBloc = ({
   user,
 }: ISledpoolProps): JSX.Element => {
   return (
-    <SearchBlocContainer className='d-flex space-between'>
-      <LeftPartContainer className='d-flex flex-column space-between'>
+    <SearchBlocContainer className='d-flex flex-column space-between'>
+      <TopPartContainer className='d-flex space-between'>
         <SearchBlocHoursAndPlacesDisplay
           departure={departure}
           arrival={arrival}
           departureTime={departureHour}
           arrivalTime={arrivalHour}
         />
+        <PriceContainer>{price}€</PriceContainer>
+      </TopPartContainer>
+      <BottomPartContainer className='d-flex space-between align-center'>
         <ProfileDisplay
           name={user.name}
           picture={user.picture}
           alt={user.name}
         />
-      </LeftPartContainer>
-      <RightPartContainer className='d-flex flex-column space-between align-end'>
-        <PriceContainer>{price}€</PriceContainer>
         <SledDisplay
           dogs={dogs}
           seats={seats}
           availableSeats={availableSeats}
         />
-      </RightPartContainer>
+      </BottomPartContainer>
     </SearchBlocContainer>
   );
 };
 
 const SearchBlocContainer = styled.div`
-  width: 70%;
-  height: 220px;
+  width: 100%;
   padding: ${smallSpace};
   background-color: white;
   border-radius: ${radius};
@@ -68,12 +69,17 @@ const SearchBlocContainer = styled.div`
   }
 `;
 
-const LeftPartContainer = styled.span`
-  height: 100%;
+const TopPartContainer = styled.span`
+  width: 100%;
+  margin-bottom: ${normalSpace};
 `;
 
-const RightPartContainer = styled.span`
-  height: 100%;
+const BottomPartContainer = styled.span`
+  width: 100%;
+
+  @media (max-width: ${normalBreakPoint}) {
+    flex-direction: column;
+  }
 `;
 
 const PriceContainer = styled.span`

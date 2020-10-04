@@ -53,7 +53,7 @@ const NoResultBloc = ({
 };
 
 const NoResultContainer = styled.div`
-  width: 70%;
+  width: 100%;
   background-color: white;
   border-radius: ${radius};
   box-shadow: ${shadow};

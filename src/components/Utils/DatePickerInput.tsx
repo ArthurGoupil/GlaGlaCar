@@ -11,6 +11,7 @@ import {
   miniShadow,
   smallSpace,
   inputHeight,
+  homeFormBreakPoint,
 } from '../../styles/StylingConstants';
 import { getDateDisplay } from '../../helpers/globalHelpers';
 import { IDatePickerInputProps } from '../../types/UtilsTypes';
@@ -46,6 +47,11 @@ const DatePickerContainer = styled.div.attrs(
 )`
   position: relative;
   margin-right: ${(props) => (props.hasMarginRight ? smallSpace : 0)};
+
+  @media (max-width: ${homeFormBreakPoint}) {
+    margin-bottom: ${smallSpace};
+    margin-right: 0;
+  }
 `;
 
 const IconContainer = styled.div`
@@ -65,6 +71,10 @@ const StyledDatePicker = styled.input`
   box-shadow: ${miniShadow};
   outline-color: ${mainLightColor};
   cursor: pointer;
+
+  @media (max-width: ${homeFormBreakPoint}) {
+    width: 200px;
+  }
 `;
 
 export default DatePickerInput;

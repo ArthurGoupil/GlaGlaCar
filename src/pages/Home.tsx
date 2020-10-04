@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { MdInfo } from 'react-icons/md';
 
 import { ISearchProps } from '../types/SledpoolsSearchTypes';
-import { headerHeight } from '../styles/StylingConstants';
+import { headerHeight, homeFormBreakPoint } from '../styles/StylingConstants';
 import { getSimplifiedDate } from '../helpers/globalHelpers';
 import Input from '../components/Utils/Input';
 import DatePickerInput from '../components/Utils/DatePickerInput';
@@ -63,7 +63,7 @@ const Home = (): JSX.Element => {
           icon='filter-hdr'
           hasMarginRight
         />
-        <div className='d-flex'>
+        <DateAndPassengerInputs className='d-flex justify-center align-center'>
           <DatePickerInput
             date={date}
             onChange={(date) => setDate(date)}
@@ -77,7 +77,7 @@ const Home = (): JSX.Element => {
             }
             hasMarginRight
           />
-        </div>
+        </DateAndPassengerInputs>
         <Button
           label='Slide!'
           onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -108,10 +108,21 @@ const Home = (): JSX.Element => {
 
 const FormContainer = styled.section`
   width: 100%;
-  min-height: calc(100vh - ${headerHeight});
+  height: calc(100vh - ${headerHeight});
 `;
 
-const Form = styled.form``;
+const Form = styled.form`
+  width: 100%;
+  @media (max-width: ${homeFormBreakPoint}) {
+    flex-direction: column;
+  }
+`;
+
+const DateAndPassengerInputs = styled.div`
+  @media (max-width: ${homeFormBreakPoint}) {
+    flex-direction: column;
+  }
+`;
 
 const HintContainer = styled.div`
   margin-top: 10px;

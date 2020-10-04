@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './styles/reset.css';
 import './styles/index.css';
-import { mainContainerWidth } from './styles/StylingConstants';
+import { mainContainerWidth, normalSpace } from './styles/StylingConstants';
 
 import styled from 'styled-components';
 
@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <Router>
       <Root className='d-flex flex-column align-center'>
         <Header />
-        <Main>
+        <Main className='d-flex justify-center'>
           <Switch>
             <Route path='/sledpoolssearch/:departure/:arrival/:date/:numberOfPassenger'>
               <SledpoolsSearch />
@@ -45,4 +45,5 @@ const Root = styled.div`
 const Main = styled.main`
   width: 100%;
   max-width: ${mainContainerWidth};
+  padding: 0 ${normalSpace};
 `;

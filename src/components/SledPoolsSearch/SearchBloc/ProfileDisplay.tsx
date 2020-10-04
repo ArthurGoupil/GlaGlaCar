@@ -2,7 +2,11 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { mainLightColor, smallSpace } from '../../../styles/StylingConstants';
+import {
+  mainLightColor,
+  smallSpace,
+  normalBreakPoint,
+} from '../../../styles/StylingConstants';
 import { IProfileDisplayProps } from '../../../types/SledpoolsSearchTypes';
 
 const ProfileDisplay = ({
@@ -11,12 +15,18 @@ const ProfileDisplay = ({
   alt,
 }: IProfileDisplayProps): JSX.Element => {
   return (
-    <div className='d-flex align-center'>
+    <ProfileDisplayContainer className='d-flex align-center'>
       <ProfilePictureIMG src={picture} alt={alt} />
       {name}
-    </div>
+    </ProfileDisplayContainer>
   );
 };
+
+const ProfileDisplayContainer = styled.div`
+  @media (max-width: ${normalBreakPoint}) {
+    margin-bottom: ${smallSpace};
+  }
+`;
 
 const ProfilePictureIMG = styled.img`
   width: 60px;

@@ -2,7 +2,10 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { mainLightColor } from '../../../styles/StylingConstants';
+import {
+  mainLightColor,
+  normalBreakPoint,
+} from '../../../styles/StylingConstants';
 import { ISledDisplayProps } from '../../../types/SledpoolsSearchTypes';
 
 const SledDisplay = ({
@@ -49,11 +52,20 @@ const SledDisplay = ({
 
 const SledSVG = styled.img`
   width: 85px;
+
+  @media (max-width: ${normalBreakPoint}) {
+    width: 60px;
+  }
 `;
 
 const SledDogSVG = styled.img`
   width: 35px;
   margin-right: -9px;
+
+  @media (max-width: ${normalBreakPoint}) {
+    width: 25px;
+    margin-right: -5px;
+  }
 `;
 
 const TakenSeatSVG = styled.img`
@@ -61,6 +73,12 @@ const TakenSeatSVG = styled.img`
   border-bottom: 2px solid ${mainLightColor};
   margin-bottom: 2px;
   padding-bottom: 1px;
+
+  @media (max-width: ${normalBreakPoint}) {
+    width: 13px;
+    margin-bottom: 1px;
+    padding-bottom: 0px;
+  }
 `;
 
 const AvailableSeatSVG = styled.img`
@@ -68,6 +86,12 @@ const AvailableSeatSVG = styled.img`
   border-bottom: 2px solid ${mainLightColor};
   margin-bottom: 2px;
   padding-bottom: 1px;
+
+  @media (max-width: ${normalBreakPoint}) {
+    width: 14px;
+    margin-bottom: 1px;
+    padding-bottom: 0px;
+  }
 `;
 
 export default SledDisplay;

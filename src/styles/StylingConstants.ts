@@ -20,3 +20,7 @@ export const radius = '10px';
 export const miniShadow = '2px 2px 5px rgba(0, 0, 0, 0.2)';
 export const shadow = '2px 2px 10px rgba(0, 0, 0, 0.1)';
 export const mainLightColorShadow = `2px 2px 10px ${mainLightColor}`;
+
+// RESPONSIVE BREAKPOINTS
+export const normalBreakPoint = '768px';
+export const homeFormBreakPoint = '950px';

@@ -5,6 +5,7 @@ import {
   headerWidth,
   headerHeight,
   miniShadow,
+  homeFormBreakPoint,
 } from '../styles/StylingConstants';
 
 import styled from 'styled-components';
@@ -16,7 +17,7 @@ const Header: React.FC = () => {
         <Link to='/'>
           <Logo src='/glaglacar-logo.png' alt='Logo GlaGlaCar' />
         </Link>
-        <h1>The one and only service of sledpooling</h1>
+        <BaseLine>The one and only service of sledpooling</BaseLine>
       </StyledHeader>
     </HeaderContainer>
   );
@@ -38,8 +39,18 @@ const HeaderContainer = styled.div`
 const StyledHeader = styled.header`
   width: 100%;
   max-width: ${headerWidth};
+
+  @media (max-width: ${homeFormBreakPoint}) {
+    justify-content: center;
+  }
 `;
 
 const Logo = styled.img`
   height: 40px;
+`;
+
+const BaseLine = styled.h1`
+  @media (max-width: ${homeFormBreakPoint}) {
+    display: none;
+  }
 `;

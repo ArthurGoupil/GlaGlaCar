@@ -9,6 +9,7 @@ import {
   smallSpace,
   miniShadow,
   inputHeight,
+  homeFormBreakPoint,
 } from '../../styles/StylingConstants';
 import { IInputProps } from '../../types/UtilsTypes';
 
@@ -54,6 +55,10 @@ const InputContainer = styled.div.attrs(
 )`
   position: relative;
   margin-right: ${(props) => (props.hasMarginRight ? smallSpace : 0)};
+  @media (max-width: ${homeFormBreakPoint}) {
+    margin-right: 0;
+    margin-bottom: ${smallSpace};
+  }
 `;
 
 const IconContainer = styled.div`
@@ -64,6 +69,7 @@ const IconContainer = styled.div`
 `;
 
 const StyledInput = styled.input`
+  width: 100%;
   height: ${inputHeight};
   padding: 0 15px 0 35px;
   border-radius: ${miniRadius};

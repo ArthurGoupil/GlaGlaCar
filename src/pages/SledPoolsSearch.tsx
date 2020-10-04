@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import { normalSpace } from '../styles/StylingConstants';
+import { normalSpace, normalBreakPoint } from '../styles/StylingConstants';
 import SearchRecap from '../components/SledpoolsSearch/SearchRecap';
 import SearchResults from '../components/SledpoolsSearch/SearchResults';
 
@@ -36,7 +36,12 @@ const SledpoolsSearch: React.FC = () => {
 };
 
 const SearchContainer = styled.section`
+  width: 70%;
   margin: ${normalSpace} 0;
+
+  @media (max-width: ${normalBreakPoint}) {
+    width: 100%;
+  }
 `;
 
 export default SledpoolsSearch;
