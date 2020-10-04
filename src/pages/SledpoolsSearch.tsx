@@ -20,6 +20,8 @@ const SledpoolsSearch: React.FC = () => {
     numberOfPassenger,
   }: { [key: string]: string } = useParams();
 
+  console.log(new Date(date.replace(/-/g, '/')));
+
   const numberOfPassengerToNum = Number(numberOfPassenger);
 
   return (
@@ -27,13 +29,13 @@ const SledpoolsSearch: React.FC = () => {
       <SearchRecap
         departure={departure}
         arrival={arrival}
-        date={new Date(date)}
+        date={new Date(date.replace(/-/g, '/'))}
         numberOfPassenger={numberOfPassengerToNum}
       />
       <SearchResults
         departure={departure}
         arrival={arrival}
-        date={new Date(date)}
+        date={new Date(date.replace(/-/g, '/'))}
         numberOfPassenger={numberOfPassengerToNum}
       />
     </SearchContainer>

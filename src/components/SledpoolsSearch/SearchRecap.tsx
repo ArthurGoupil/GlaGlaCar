@@ -30,7 +30,7 @@ const SearchRecap = ({
           <b>{capitalizeString(arrival)}</b>
         </FirstRecapLine>
         <SecondRecapLine>
-          {getDateDisplay(new Date(date))}, {numberOfPassenger} passenger
+          {getDateDisplay(date)}, {numberOfPassenger} passenger
           {numberOfPassenger > 1 && 's'}
         </SecondRecapLine>
       </div>
