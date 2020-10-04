@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { mainColor } from '../../../styles/StylingConstants';
-import { IHoursAndPlacesProps } from '../../../types/SledPoolsSearchTypes';
+import { IHoursAndPlacesProps } from '../../../types/SledpoolsSearchTypes';
 
 const SearchBlocHoursAndPlacesDisplay = ({
   departure,
@@ -12,7 +12,7 @@ const SearchBlocHoursAndPlacesDisplay = ({
   arrivalTime,
 }: IHoursAndPlacesProps): JSX.Element => {
   return (
-    <Container className='d-flex flex-column space-between'>
+    <SearchBlocHoursAndPlacesDisplayContainer className='d-flex flex-column space-between'>
       <span className='d-flex align-center'>
         {departureTime} <Circle /> {departure}
       </span>
@@ -20,11 +20,11 @@ const SearchBlocHoursAndPlacesDisplay = ({
       <span className='d-flex align-center'>
         {arrivalTime} <Circle /> {arrival}
       </span>
-    </Container>
+    </SearchBlocHoursAndPlacesDisplayContainer>
   );
 };
 
-const Container = styled.span`
+const SearchBlocHoursAndPlacesDisplayContainer = styled.span`
   font-weight: bold;
   height: 100px;
 `;

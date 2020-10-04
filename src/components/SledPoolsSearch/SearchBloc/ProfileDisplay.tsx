@@ -3,13 +3,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { mainLightColor, smallSpace } from '../../../styles/StylingConstants';
-import { IProfileDisplayProps } from '../../../types/SledPoolsSearchTypes';
+import { IProfileDisplayProps } from '../../../types/SledpoolsSearchTypes';
 
-const ProfileDisplay = ({ src, alt }: IProfileDisplayProps): JSX.Element => {
+const ProfileDisplay = ({
+  name,
+  picture,
+  alt,
+}: IProfileDisplayProps): JSX.Element => {
   return (
     <div className='d-flex align-center'>
-      <ProfilePictureIMG src={src} alt={alt} />
-      Yapluk
+      <ProfilePictureIMG src={picture} alt={alt} />
+      {name}
     </div>
   );
 };

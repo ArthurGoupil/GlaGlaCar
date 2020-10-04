@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { MdInfo } from 'react-icons/md';
 
-import { ISearchProps } from '../types/SledPoolsSearchTypes';
+import { ISearchProps } from '../types/SledpoolsSearchTypes';
 import { headerHeight } from '../styles/StylingConstants';
 import { getSimplifiedDate } from '../helpers/globalHelpers';
 import Input from '../components/Utils/Input';

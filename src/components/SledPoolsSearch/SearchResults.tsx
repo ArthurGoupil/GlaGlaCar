@@ -1,8 +1,10 @@
 import React from 'react';
 
 import { data } from '../../data/data';
-import { ISearchProps } from '../../types/SledPoolsSearchTypes';
-import SearchBloc from './SearchBloc/';
+import { getSimplifiedDate } from '../../helpers/globalHelpers';
+import { ISearchProps, ISledpoolProps } from '../../types/SledpoolsSearchTypes';
+import NoResultBloc from './NoResultBloc';
+import SearchBloc from './SearchBloc';
 
 const SearchResults = ({
   departure,
@@ -10,17 +12,27 @@ const SearchResults = ({
   date,
   numberOfPassenger,
 }: ISearchProps): JSX.Element => {
-  console.log(departure, arrival, date, numberOfPassenger);
-  console.log(data);
+  const matchingResults: ISledpoolProps[] = [];
+
+  data.forEach((sledPool) => {
+    if (
+      getSimplifiedDate(sledPool.date, '/') === getSimplifiedDate(date, '/') &&
+      sledPool.departure.toLocaleLowerCase() === departure &&
+      sledPool.arrival.toLowerCase() === arrival &&
+      sledPool.availableSeats >= numberOfPassenger
+    )
+      matchingResults.push(sledPool);
+  });
 
   return (
     <>
-      <SearchBloc />
-      <SearchBloc />
-      <SearchBloc />
-      <SearchBloc />
-      <SearchBloc />
-      <SearchBloc />
+      {matchingResults.length > 0 ? (
+        matchingResults.map((sledPool, index) => {
+          return <SearchBloc key={sledPool.id} {...sledPool} />;
+        })
+      ) : (
+        <NoResultBloc numberOfPassenger={numberOfPassenger} />
+      )}
     </>
   );
 };

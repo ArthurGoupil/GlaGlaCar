@@ -1,12 +1,10 @@
-import {
-  getDateWithDaysOffset,
-  getSimplifiedDate,
-} from '../helpers/globalHelpers';
+import { getDateWithDaysOffset } from '../helpers/globalHelpers';
 
-const tomorrow = getSimplifiedDate(getDateWithDaysOffset(new Date(), 1), '/');
+const tomorrow = getDateWithDaysOffset(new Date(), 1);
 
 export const data = [
   {
+    id: '1',
     departure: 'Paris',
     departureHour: '10h30',
     arrival: 'Lapland',
@@ -23,6 +21,7 @@ export const data = [
     },
   },
   {
+    id: '2',
     departure: 'Paris',
     departureHour: '11h30',
     arrival: 'Lapland',
@@ -39,6 +38,7 @@ export const data = [
     },
   },
   {
+    id: '3',
     departure: 'Paris',
     departureHour: '13h30',
     arrival: 'Lapland',
@@ -55,6 +55,7 @@ export const data = [
     },
   },
   {
+    id: '4',
     departure: 'Paris',
     departureHour: '14h30',
     arrival: 'Lapland',
@@ -71,6 +72,7 @@ export const data = [
     },
   },
   {
+    id: '5',
     departure: 'Paris',
     departureHour: '16h00',
     arrival: 'Lapland',
@@ -87,6 +89,7 @@ export const data = [
     },
   },
   {
+    id: '6',
     departure: 'Paris',
     departureHour: '17h00',
     arrival: 'Lapland',
@@ -103,6 +106,7 @@ export const data = [
     },
   },
   {
+    id: '7',
     departure: 'Paris',
     departureHour: '17h15',
     arrival: 'Lapland',
@@ -119,6 +123,7 @@ export const data = [
     },
   },
   {
+    id: '8',
     departure: 'Paris',
     departureHour: '18h00',
     arrival: 'Lapland',
@@ -135,6 +140,7 @@ export const data = [
     },
   },
   {
+    id: '9',
     departure: 'Paris',
     departureHour: '18h30',
     arrival: 'Lapland',

@@ -27,6 +27,9 @@ textarea {
 b {
   font-weight: bold;
 }
+i {
+  font-style: italic;
+}
 
 /* TITLES */
 h1 {

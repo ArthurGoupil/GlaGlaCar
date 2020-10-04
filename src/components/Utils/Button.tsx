@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {
   mainColor,
   mainLightColor,
+  darkenedMainLightColor,
   inputHeight,
   miniRadius,
   miniShadow,
@@ -18,7 +19,7 @@ const Button = ({
   disabled,
 }: IButtonProps): JSX.Element => {
   return (
-    <StyledButton onClick={onClick} disabled={disabled}>
+    <StyledButton onClick={onClick} disabled={disabled} type={type}>
       {label}
     </StyledButton>
   );
@@ -38,6 +39,11 @@ const StyledButton = styled.button.attrs((props: { disabled: boolean }) => ({
   font-weight: bold;
   outline: ${mainColor};
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${darkenedMainLightColor};
+  }
 `;
 
 export default Button;

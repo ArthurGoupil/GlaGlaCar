@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 import Header from './components/Header';
 import Home from './pages/Home';
-import SledPoolsSearch from './pages/SledPoolsSearch';
+import SledpoolsSearch from './pages/SledpoolsSearch';
 
 const App: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const App: React.FC = () => {
         <Main>
           <Switch>
             <Route path='/sledpoolssearch/:departure/:arrival/:date/:numberOfPassenger'>
-              <SledPoolsSearch />
+              <SledpoolsSearch />
             </Route>
             <Route path='/'>
               <Home />

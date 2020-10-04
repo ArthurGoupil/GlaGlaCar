@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 
-import { ISearchProps } from '../../types/SledPoolsSearchTypes';
+import { ISearchProps } from '../../types/SledpoolsSearchTypes';
 import {
   mainColor,
   mainLightColor,

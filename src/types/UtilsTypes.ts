@@ -24,6 +24,6 @@ export interface INumericInputProps {
 export interface IButtonProps {
   label: string;
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  type: string;
+  type: 'button' | 'submit' | 'reset' | undefined;
   disabled: boolean;
 }

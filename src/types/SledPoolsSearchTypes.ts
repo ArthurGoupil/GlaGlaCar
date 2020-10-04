@@ -13,6 +13,32 @@ export interface IHoursAndPlacesProps {
 }
 
 export interface IProfileDisplayProps {
-  src: string;
+  name: string;
+  picture: string;
   alt: string;
+}
+
+export interface ISledDisplayProps {
+  dogs: number;
+  seats: number;
+  availableSeats: number;
+}
+
+export interface ISledpoolUser {
+  name: string;
+  picture: string;
+}
+
+export interface ISledpoolProps {
+  id: string;
+  departure: string;
+  departureHour: string;
+  arrival: string;
+  arrivalHour: string;
+  date: Date;
+  price: number;
+  seats: number;
+  availableSeats: number;
+  dogs: number;
+  user: ISledpoolUser;
 }

@@ -4,10 +4,10 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { normalSpace } from '../styles/StylingConstants';
-import SearchRecap from '../components/SledPoolsSearch/SearchRecap';
-import SearchResults from '../components/SledPoolsSearch/SearchResults';
+import SearchRecap from '../components/SledpoolsSearch/SearchRecap';
+import SearchResults from '../components/SledpoolsSearch/SearchResults';
 
-const SledPoolsSearch: React.FC = () => {
+const SledpoolsSearch: React.FC = () => {
   const {
     departure,
     arrival,
@@ -36,7 +36,7 @@ const SledPoolsSearch: React.FC = () => {
 };
 
 const SearchContainer = styled.section`
-  margin-top: ${normalSpace};
+  margin: ${normalSpace} 0;
 `;
 
-export default SledPoolsSearch;
+export default SledpoolsSearch;

@@ -8,28 +8,45 @@ import {
   shadow,
   mainLightColorShadow,
 } from '../../../styles/StylingConstants';
-import Sled from './Sled';
+import { ISledpoolProps } from '../../../types/SledpoolsSearchTypes';
+import SledDisplay from './SledDisplay';
 import SearchBlocHoursAndPlacesDisplay from './SearchBlocHoursAndPlacesDisplay';
 import ProfileDisplay from './ProfileDisplay';
 
-const SearchBloc = (): JSX.Element => {
+const SearchBloc = ({
+  departure,
+  departureHour,
+  arrival,
+  arrivalHour,
+  date,
+  price,
+  seats,
+  availableSeats,
+  dogs,
+  user,
+}: ISledpoolProps): JSX.Element => {
   return (
     <SearchBlocContainer className='d-flex space-between'>
       <LeftPartContainer className='d-flex flex-column space-between'>
         <SearchBlocHoursAndPlacesDisplay
-          departure='Paris'
-          arrival='Lapland'
-          departureTime='14h00'
-          arrivalTime='17h00'
+          departure={departure}
+          arrival={arrival}
+          departureTime={departureHour}
+          arrivalTime={arrivalHour}
         />
         <ProfileDisplay
-          src='https://res.cloudinary.com/goupil/image/upload/v1601632611/glaglacar/inuit-f4_mipdjh.png'
-          alt='Yuklek'
+          name={user.name}
+          picture={user.picture}
+          alt={user.name}
         />
       </LeftPartContainer>
       <RightPartContainer className='d-flex flex-column space-between align-end'>
-        <PriceContainer>120€</PriceContainer>
-        <Sled />
+        <PriceContainer>{price}€</PriceContainer>
+        <SledDisplay
+          dogs={dogs}
+          seats={seats}
+          availableSeats={availableSeats}
+        />
       </RightPartContainer>
     </SearchBlocContainer>
   );

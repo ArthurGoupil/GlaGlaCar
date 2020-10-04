@@ -1,6 +1,8 @@
 // COLORS
 export const mainColor = '#1a4651';
 export const mainLightColor = '#52befb';
+export const darkenedMainLightColor = '#008fc1';
+export const alternateColor = '#b6ee6d';
 
 // SIZES
 export const mainContainerWidth = '1024px';
