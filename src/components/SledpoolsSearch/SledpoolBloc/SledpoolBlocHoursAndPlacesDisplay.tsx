@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import { mainColor } from '../../../styles/StylingConstants';
 import { IHoursAndPlacesProps } from '../../../types/SledpoolsSearchTypes';
 
-const SearchBlocHoursAndPlacesDisplay = ({
+const SledpoolBlocHoursAndPlacesDisplay = ({
   departure,
   arrival,
   departureTime,
   arrivalTime,
 }: IHoursAndPlacesProps): JSX.Element => {
   return (
-    <SearchBlocHoursAndPlacesDisplayContainer className='d-flex flex-column space-between'>
+    <SledpoolBlocHoursAndPlacesDisplayContainer className='d-flex flex-column space-between'>
       <span className='d-flex align-center'>
         {departureTime} <Circle /> {departure}
       </span>
@@ -20,11 +20,11 @@ const SearchBlocHoursAndPlacesDisplay = ({
       <span className='d-flex align-center'>
         {arrivalTime} <Circle /> {arrival}
       </span>
-    </SearchBlocHoursAndPlacesDisplayContainer>
+    </SledpoolBlocHoursAndPlacesDisplayContainer>
   );
 };
 
-const SearchBlocHoursAndPlacesDisplayContainer = styled.span`
+const SledpoolBlocHoursAndPlacesDisplayContainer = styled.span`
   font-weight: bold;
   height: 100px;
 `;
@@ -47,4 +47,4 @@ const HorizontalBar = styled.span`
   background-color: ${mainColor};
 `;
 
-export default SearchBlocHoursAndPlacesDisplay;
+export default SledpoolBlocHoursAndPlacesDisplay;

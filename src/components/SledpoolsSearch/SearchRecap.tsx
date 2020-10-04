@@ -10,6 +10,7 @@ import {
   radius,
   smallSpace,
   normalSpace,
+  tabletBreakPoint,
 } from '../../styles/StylingConstants';
 import { capitalizeString, getDateDisplay } from '../../helpers/globalHelpers';
 
@@ -45,6 +46,10 @@ const SearchRecapContainer = styled.div`
   padding: ${smallSpace};
   border-radius: ${radius};
   margin-bottom: ${normalSpace};
+
+  @media (max-width: ${tabletBreakPoint}) {
+    margin-bottom: ${smallSpace};
+  }
 `;
 
 const IconContainer = styled.div`

@@ -12,10 +12,10 @@ import {
 } from '../../../styles/StylingConstants';
 import { ISledpoolProps } from '../../../types/SledpoolsSearchTypes';
 import SledDisplay from './SledDisplay';
-import SearchBlocHoursAndPlacesDisplay from './SearchBlocHoursAndPlacesDisplay';
+import SledpoolBlocHoursAndPlacesDisplay from './SledpoolBlocHoursAndPlacesDisplay';
 import ProfileDisplay from './ProfileDisplay';
 
-const SearchBloc = ({
+const SledpoolBloc = ({
   departure,
   departureHour,
   arrival,
@@ -28,9 +28,9 @@ const SearchBloc = ({
   user,
 }: ISledpoolProps): JSX.Element => {
   return (
-    <SearchBlocContainer className='d-flex flex-column space-between'>
+    <SledpoolBlocContainer className='d-flex flex-column space-between'>
       <TopPartContainer className='d-flex space-between'>
-        <SearchBlocHoursAndPlacesDisplay
+        <SledpoolBlocHoursAndPlacesDisplay
           departure={departure}
           arrival={arrival}
           departureTime={departureHour}
@@ -50,11 +50,11 @@ const SearchBloc = ({
           availableSeats={availableSeats}
         />
       </BottomPartContainer>
-    </SearchBlocContainer>
+    </SledpoolBlocContainer>
   );
 };
 
-const SearchBlocContainer = styled.div`
+const SledpoolBlocContainer = styled.div`
   width: 100%;
   padding: ${smallSpace};
   background-color: white;
@@ -86,4 +86,4 @@ const PriceContainer = styled.span`
   font-weight: bold;
 `;
 
-export default SearchBloc;
+export default SledpoolBloc;

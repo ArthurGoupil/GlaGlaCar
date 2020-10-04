@@ -5,7 +5,12 @@ import styled from 'styled-components';
 import { MdInfo } from 'react-icons/md';
 
 import { ISearchProps } from '../types/SledpoolsSearchTypes';
-import { headerHeight, homeFormBreakPoint } from '../styles/StylingConstants';
+import {
+  headerHeight,
+  homeFormBreakPoint,
+  smallSpace,
+  normalSpace,
+} from '../styles/StylingConstants';
 import { getSimplifiedDate } from '../helpers/globalHelpers';
 import Input from '../components/Utils/Input';
 import DatePickerInput from '../components/Utils/DatePickerInput';
@@ -110,7 +115,11 @@ const Home = (): JSX.Element => {
 
 const FormContainer = styled.section`
   width: 100%;
-  min-height: calc(100vh - ${headerHeight});
+  min-height: calc(100vh - ${headerHeight} - 2 * ${normalSpace});
+
+  @media (max-width: ${homeFormBreakPoint}) {
+    min-height: calc(100vh - ${headerHeight} - 2 * ${smallSpace});
+  }
 `;
 
 const Form = styled.form`

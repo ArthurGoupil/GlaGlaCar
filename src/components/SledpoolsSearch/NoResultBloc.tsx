@@ -79,7 +79,6 @@ const QuoteContainer = styled.div`
   @media (max-width: ${tabletBreakPoint}) {
     width: 100%;
     padding-bottom: 10px;
-
     margin-bottom: -40px;
   }
 `;

@@ -50,7 +50,7 @@ const Root = styled.div`
 const Main = styled.main`
   width: 100%;
   max-width: ${mainContainerWidth};
-  padding: 0 ${normalSpace};
+  padding: ${normalSpace};
 
   @media (max-width: ${mobileBreakPoint}) {
     padding: ${smallSpace};

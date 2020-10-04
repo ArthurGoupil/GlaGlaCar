@@ -44,13 +44,9 @@ const SledpoolsSearch: React.FC = () => {
 
 const SearchContainer = styled.section`
   width: 70%;
-  margin: ${normalSpace} 0;
 
   @media (max-width: ${tabletBreakPoint}) {
     width: 100%;
-  }
-  @media (max-width: ${mobileBreakPoint}) {
-    margin: ${smallSpace} 0;
   }
 `;
 
