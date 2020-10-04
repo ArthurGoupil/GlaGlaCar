@@ -75,3 +75,10 @@ h3 {
 .flex-wrap {
   flex-wrap: wrap;
 }
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  display: block;
+}
+.MyClass .react-datepicker-wrapper .react-datepicker__input-container input {
+  width: 100%;
+}

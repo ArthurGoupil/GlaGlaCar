@@ -96,7 +96,9 @@ const Home = (): JSX.Element => {
         />
       </Form>
       <HintContainer className='d-flex align-center'>
-        <MdInfo />
+        <HintIconContainer>
+          <MdInfo />
+        </HintIconContainer>
         <HintText>
           There's not much available sledpools at the moment... Why don't you
           try to go from Paris to Lapland tomorrow?
@@ -126,6 +128,10 @@ const DateAndPassengerInputs = styled.div`
 
 const HintContainer = styled.div`
   margin-top: 10px;
+`;
+
+const HintIconContainer = styled.div`
+  font-size: 25px;
 `;
 
 const HintText = styled.p`
