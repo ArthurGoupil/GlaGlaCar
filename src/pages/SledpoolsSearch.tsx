@@ -3,7 +3,12 @@ import { useParams } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import { normalSpace, normalBreakPoint } from '../styles/StylingConstants';
+import {
+  smallSpace,
+  normalSpace,
+  mobileBreakPoint,
+  tabletBreakPoint,
+} from '../styles/StylingConstants';
 import SearchRecap from '../components/SledpoolsSearch/SearchRecap';
 import SearchResults from '../components/SledpoolsSearch/SearchResults';
 
@@ -39,8 +44,11 @@ const SearchContainer = styled.section`
   width: 70%;
   margin: ${normalSpace} 0;
 
-  @media (max-width: ${normalBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     width: 100%;
+  }
+  @media (max-width: ${mobileBreakPoint}) {
+    margin: ${smallSpace} 0;
   }
 `;
 

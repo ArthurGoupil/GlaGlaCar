@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {
   mainLightColor,
   smallSpace,
-  normalBreakPoint,
+  tabletBreakPoint,
 } from '../../../styles/StylingConstants';
 import { IProfileDisplayProps } from '../../../types/SledpoolsSearchTypes';
 
@@ -23,7 +23,7 @@ const ProfileDisplay = ({
 };
 
 const ProfileDisplayContainer = styled.div`
-  @media (max-width: ${normalBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     margin-bottom: ${smallSpace};
   }
 `;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {
   mainLightColor,
-  normalBreakPoint,
+  tabletBreakPoint,
 } from '../../../styles/StylingConstants';
 import { ISledDisplayProps } from '../../../types/SledpoolsSearchTypes';
 
@@ -53,7 +53,7 @@ const SledDisplay = ({
 const SledSVG = styled.img`
   width: 85px;
 
-  @media (max-width: ${normalBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     width: 60px;
   }
 `;
@@ -62,7 +62,7 @@ const SledDogSVG = styled.img`
   width: 35px;
   margin-right: -9px;
 
-  @media (max-width: ${normalBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     width: 25px;
     margin-right: -5px;
   }
@@ -74,7 +74,7 @@ const TakenSeatSVG = styled.img`
   margin-bottom: 2px;
   padding-bottom: 1px;
 
-  @media (max-width: ${normalBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     width: 13px;
     margin-bottom: 1px;
     padding-bottom: 0px;
@@ -87,7 +87,7 @@ const AvailableSeatSVG = styled.img`
   margin-bottom: 2px;
   padding-bottom: 1px;
 
-  @media (max-width: ${normalBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     width: 14px;
     margin-bottom: 1px;
     padding-bottom: 0px;

@@ -33,7 +33,7 @@ const HeaderContainer = styled.div`
   padding: 0 40px;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 5;
 `;
 
 const StyledHeader = styled.header`

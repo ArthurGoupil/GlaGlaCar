@@ -8,7 +8,7 @@ import {
   normalSpace,
   shadow,
   mainLightColorShadow,
-  normalBreakPoint,
+  tabletBreakPoint,
 } from '../../../styles/StylingConstants';
 import { ISledpoolProps } from '../../../types/SledpoolsSearchTypes';
 import SledDisplay from './SledDisplay';
@@ -77,7 +77,7 @@ const TopPartContainer = styled.span`
 const BottomPartContainer = styled.span`
   width: 100%;
 
-  @media (max-width: ${normalBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     flex-direction: column;
   }
 `;

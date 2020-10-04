@@ -68,6 +68,7 @@ const IconContainer = styled.div`
 
 const StyledDatePicker = styled.input`
   width: 100%;
+  min-width: 140px;
   height: ${inputHeight};
   padding: 0 15px 0 35px;
   border-radius: ${miniRadius};

@@ -29,8 +29,8 @@ const StyledButton = styled.button.attrs((props: { disabled: boolean }) => ({
   disabled: props.disabled,
 }))`
   background-color: ${mainLightColor};
-  height: ${inputHeight};
-  padding: 0 15px;
+  min-height: ${inputHeight};
+  padding: 10px 15px;
   border-radius: ${miniRadius};
   border: none;
   box-shadow: ${miniShadow};

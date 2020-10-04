@@ -3,7 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './styles/reset.css';
 import './styles/index.css';
-import { mainContainerWidth, normalSpace } from './styles/StylingConstants';
+import {
+  mainContainerWidth,
+  smallSpace,
+  normalSpace,
+  mobileBreakPoint,
+} from './styles/StylingConstants';
 
 import styled from 'styled-components';
 
@@ -46,4 +51,8 @@ const Main = styled.main`
   width: 100%;
   max-width: ${mainContainerWidth};
   padding: 0 ${normalSpace};
+
+  @media (max-width: ${mobileBreakPoint}) {
+    padding: 0 ${smallSpace};
+  }
 `;
