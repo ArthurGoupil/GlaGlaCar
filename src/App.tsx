@@ -7,7 +7,7 @@ import {
   mainContainerWidth,
   smallSpace,
   normalSpace,
-  mobileBreakPoint,
+  tabletBreakPoint,
 } from './styles/StylingConstants';
 
 import styled from 'styled-components';
@@ -52,7 +52,7 @@ const Main = styled.main`
   max-width: ${mainContainerWidth};
   padding: ${normalSpace};
 
-  @media (max-width: ${mobileBreakPoint}) {
+  @media (max-width: ${tabletBreakPoint}) {
     padding: ${smallSpace};
   }
 `;
