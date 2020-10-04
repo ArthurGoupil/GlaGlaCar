@@ -110,7 +110,7 @@ const Home = (): JSX.Element => {
 
 const FormContainer = styled.section`
   width: 100%;
-  height: calc(100vh - ${headerHeight});
+  min-height: calc(100vh - ${headerHeight});
 `;
 
 const Form = styled.form`

@@ -53,6 +53,6 @@ const Main = styled.main`
   padding: 0 ${normalSpace};
 
   @media (max-width: ${mobileBreakPoint}) {
-    padding: 0 ${smallSpace};
+    padding: ${smallSpace};
   }
 `;
