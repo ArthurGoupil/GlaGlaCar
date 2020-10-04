@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import {
   mainLightColor,
+  mobileBreakPoint,
   tabletBreakPoint,
 } from '../../../styles/StylingConstants';
 import { ISledDisplayProps } from '../../../types/SledpoolsSearchTypes';
@@ -56,6 +57,9 @@ const SledSVG = styled.img`
   @media (max-width: ${tabletBreakPoint}) {
     width: 60px;
   }
+  @media (max-width: ${mobileBreakPoint}) {
+    width: 40px;
+  }
 `;
 
 const SledDogSVG = styled.img`
@@ -65,6 +69,10 @@ const SledDogSVG = styled.img`
   @media (max-width: ${tabletBreakPoint}) {
     width: 25px;
     margin-right: -5px;
+  }
+  @media (max-width: ${mobileBreakPoint}) {
+    width: 17px;
+    margin-right: -4px;
   }
 `;
 
@@ -79,6 +87,12 @@ const TakenSeatSVG = styled.img`
     margin-bottom: 1px;
     padding-bottom: 0px;
   }
+  @media (max-width: ${mobileBreakPoint}) {
+    width: 8px;
+    margin-bottom: 1px;
+    padding-bottom: 0px;
+    border-width: 1px;
+  }
 `;
 
 const AvailableSeatSVG = styled.img`
@@ -91,6 +105,12 @@ const AvailableSeatSVG = styled.img`
     width: 14px;
     margin-bottom: 1px;
     padding-bottom: 0px;
+  }
+  @media (max-width: ${mobileBreakPoint}) {
+    width: 8px;
+    margin-bottom: 1px;
+    padding-bottom: 0px;
+    border-width: 1px;
   }
 `;
 

@@ -8,6 +8,7 @@ import {
   shadow,
   smallSpace,
   normalSpace,
+  tabletBreakPoint,
 } from '../../styles/StylingConstants';
 import {
   getDateWithDaysOffset,
@@ -39,7 +40,7 @@ const NoResultBloc = ({
       </QuoteContainer>
       <NoResultSVG src='/noresult.svg' alt='' />
       <Button
-        label="Accept Yapluk's advice"
+        label="Follow Nanuq's advice"
         onClick={() =>
           history.push(
             `/sledpoolssearch/paris/lapland/${simplifiedTomorrowDate}/${numberOfPassenger}`
@@ -74,10 +75,22 @@ const QuoteContainer = styled.div`
   position: relative;
   padding-bottom: 15px;
   margin-bottom: -60px;
+
+  @media (max-width: ${tabletBreakPoint}) {
+    width: 100%;
+    padding-bottom: 10px;
+
+    margin-bottom: -40px;
+  }
 `;
 
 const QuoteText = styled.p`
   z-index: 2;
+
+  @media (max-width: ${tabletBreakPoint}) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 const QuoteArrow = styled.div`
@@ -90,6 +103,12 @@ const QuoteArrow = styled.div`
   position: absolute;
   bottom: -42px;
   z-index: 1;
+
+  @media (max-width: ${tabletBreakPoint}) {
+    width: 30px;
+    height: 30px;
+    bottom: -18px;
+  }
 `;
 
 export default NoResultBloc;
